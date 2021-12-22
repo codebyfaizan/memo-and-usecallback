@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Demo from "./components/Demo/Demo";
+import Button from "./components/UI/Button/Button";
 
 function App() {
+  const [showParagraph, setShowParagraph] = React.useState(false);
+  const [allowToggle, setAllowToggle] = React.useState(false);
+
+  console.log("App Running");
+
+  const paragraphToggleHandler = React.useCallback(() => {
+    if (allowToggle) {
+      setShowParagraph(true); 
+    }
+  }, [allowToggle]); //Since paragraphToggleHandler forms a closure with allowToggleHandler the previous value of allowToggle gets saved and since we have used useCallback the re-rendering don't happen making the value of allowToggle to never change. Hence, we need an array o dependency which will make React to check if the value allowToggle changed or not
+
+  const allowToggleHandler = () => {
+    setAllowToggle(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Hi there!</h1>
+      <Demo show={showParagraph} />
+      <Button onClick={allowToggleHandler}>Allow Toggle</Button>
+      <Button onClick={paragraphToggleHandler}>Toggle Paragraph</Button>
     </div>
   );
 }
