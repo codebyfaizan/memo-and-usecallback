@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/memo-and-usecallback/static/css/main.29c52a7c.css",
+    "main.js": "/memo-and-usecallback/static/js/main.9bad2a24.js",
+    "index.html": "/memo-and-usecallback/index.html",
+    "main.29c52a7c.css.map": "/memo-and-usecallback/static/css/main.29c52a7c.css.map",
+    "main.9bad2a24.js.map": "/memo-and-usecallback/static/js/main.9bad2a24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29c52a7c.css",
+    "static/js/main.9bad2a24.js"
+  ]
+}
